@@ -8,7 +8,7 @@
 <div class="columns">
     <div class="column">
         <div class="box">
-            <h1 class="title">Login</h1>
+            <h1 class="title">Signup</h1>
             <SignupForm />
         </div>
     </div>

@@ -13,6 +13,6 @@
         <input bind:value={password} class="input" id="password" name="password" placeholder="Enter Password" type="password" />
     </div>
     <div class="field is-grouped">
-        <button class="button is-link">Log In</button>
+        <button class="button is-link">SignUp</button>
     </div>
 </form>
