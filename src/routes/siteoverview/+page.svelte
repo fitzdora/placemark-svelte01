@@ -1,9 +1,13 @@
 <script>
     import Header from "$lib/Header.svelte";
     import SiteList from "$lib/SiteList.svelte";
+    import MainNavigator from "$lib/MainNavigator.svelte";
 </script>
 
-<Header />
+<Header>
+    <MainNavigator />
+</Header>
+
 <div class="columns">
     <div class="column has-text-centered">
         <img alt="tree" src="/tree.png" width="200" />

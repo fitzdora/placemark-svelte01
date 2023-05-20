@@ -1,9 +1,13 @@
 <script>
     import Header from '$lib/Header.svelte';
     import SignupForm from '$lib/SignupForm.svelte';
+    import WelcomeNavigator from '$lib/WelcomeNavigator.svelte';
 </script>
 
-<Header />
+<Header>
+    <WelcomeNavigator />
+</Header>
+
 
 <div class="columns">
     <div class="column">
