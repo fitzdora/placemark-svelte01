@@ -6,7 +6,7 @@
 
     async function login() {
         console.log(`attemting to log in email: ${email} with password: ${password}`);
-        goto('/donate'); // this route will need to be changed
+        goto('/addplace'); // this route may need to be changed
     }
 </script>
 

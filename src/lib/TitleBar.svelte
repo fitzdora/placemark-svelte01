@@ -4,8 +4,10 @@
 </script>
 
 <div class="box has-text-centered columns m-2">
-    <div class="column">
-        <img src="/ireland.png" width="60" alt="img" />
+    <div>
+     <a href="/" class="column">
+     <img src="/ireland.png" width="60" alt="img" />
+     </a>
     </div>
     <div class="column">
         <div class="title is-5">{title}</div>
