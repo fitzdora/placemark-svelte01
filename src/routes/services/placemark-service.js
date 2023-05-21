@@ -4,8 +4,8 @@
 import axios from "axios";
 
 export const placemarkService = {
-    baseUrl: "http://localhost:4000", // doublecheck this against API   
-
+    baseUrl: "http://localhost:3001", // doublecheck this against API   
+  
    
     async login(email, password) {
         try {
@@ -26,11 +26,11 @@ export const placemarkService = {
         localStorage.removeItem("donation");
     },
 
-    async signup(firstName, lastName, email, password) {
+    async signup(firstname, lastname, email, password) {
         try {
             const userDetails = {
-                firstName: firstName,
-                lastName: lastName,
+                firstname: firstname,
+                lastname: lastname,
                 email: email,
                 password: password
             };

@@ -1,12 +1,21 @@
 <script>
     import { goto } from '$app/navigation'; //this will need to be checked against hapi
+    import { placemarkService } from '../routes/services/placemark-service';
 
     let email = '';
     let password = '';
+    let errorMessage = '';
 
     async function login() {
         console.log(`attemting to log in email: ${email} with password: ${password}`);
+        let success = await placemarkService.login(email, password);
+        if (success){
         goto('/addplace'); // this route may need to be changed
+        } else {
+            email = '';
+            password = '';
+            errorMessage = 'Invalid Credentials';
+        }
     }
 </script>
 
@@ -23,3 +32,8 @@
         <button class="button is-link">Log In</button>
     </div>
 </form>
+{#if errorMessage}
+<div class="section">
+    {errorMessage}
+</div>
+{/if}
