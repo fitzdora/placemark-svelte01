@@ -2,6 +2,7 @@
 // @ts-nocheck
 
 import axios from "axios";
+import { user } from "../../stores.js";
 
 export const placemarkService = {
     baseUrl: "http://localhost:3001", // doublecheck this against API   
@@ -12,6 +13,11 @@ export const placemarkService = {
             const response = await axios.post(`${this.baseUrl}/api/users/authenticate`, { email, password });
             axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.token;
             if (response.data.success) {
+                user.set ({
+                    email: email,
+                    token: response.data.token
+                });
+                localStorage.addplace = JSON.stringify({email:email, token:response.data.token});
                 return true;
             }
             return false;
@@ -22,8 +28,12 @@ export const placemarkService = {
     },
 
     async logout() {
+        user.set({
+            email: "",
+            token: ""
+        });
         axios.defaults.headers.common["Authorization"] = "";
-        // localStorage.removeItem("donation");
+        localStorage.removeItem("addplace");
     },
 
     async signup(firstname, lastname, email, password) {
@@ -38,6 +48,18 @@ export const placemarkService = {
             return true;
         } catch (error) {
             return false;
+        }
+    },
+
+    reload() {
+        const addplaceCredentials = localStorage.addplace;
+        if (addplaceCredentials) {
+            const savedUser = JSON.parse(addplaceCredentials);
+            user.set({
+                email: savedUser.email,
+                token: savedUser.token
+            });
+            axios.defaults.headers.common["Authorization"] = "Bearer" + savedUser.token;
         }
     }
 };
