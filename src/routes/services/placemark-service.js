@@ -23,7 +23,7 @@ export const placemarkService = {
 
     async logout() {
         axios.defaults.headers.common["Authorization"] = "";
-        localStorage.removeItem("donation");
+        // localStorage.removeItem("donation");
     },
 
     async signup(firstname, lastname, email, password) {

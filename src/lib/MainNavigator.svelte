@@ -5,7 +5,7 @@
     <a href="/siteoverview" class="column is-4">
         <i class="fas fa-table-list fa-3x" style="color: purple" />
     </a>
-    <a href="/" class="column is-4">
+    <a href="/logout" class="column is-4">
         <i class="fas fa-sign-out-alt fa-3x" style="color: #565148;" />
     </a>
 </div>
