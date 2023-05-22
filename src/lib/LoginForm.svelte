@@ -10,7 +10,7 @@
         console.log(`attemting to log in email: ${email} with password: ${password}`);
         let success = await placemarkService.login(email, password);
         if (success){
-        goto('/addplace'); // this route may need to be changed
+        goto('/addsite'); // this route may need to be changed
         } else {
             email = '';
             password = '';

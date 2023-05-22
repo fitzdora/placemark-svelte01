@@ -1,5 +1,5 @@
 <div class="box has-text-centered columns m-2">
-    <a href="/addplace" class="column is-4">
+    <a href="/addsite" class="column is-4">
         <i class="fas fa-building fa-3x" style="color: #CDBF89;" />
     </a>
     <a href="/siteoverview" class="column is-4">
