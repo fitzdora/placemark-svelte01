@@ -1,11 +1,14 @@
 <script>
-    import { onMount } from "svelte";
+   import { onMount } from "svelte";
    import { placemarkService } from "../routes/services/placemark-service.js";
 
     let siteList = [];
+    let guideList = [];
+
     onMount(async () => {
 
         siteList = await placemarkService.getSites();
+        guideList = await placemarkService.getGuides();
     });
 </script>
 <table class="table is-fullwidth">
@@ -26,7 +29,11 @@
             {site.site}
             </td>
             <td>
-            {site.guide}
+                {#each guideList as guide }
+                {#if guide.siteId == site._id}
+                {guide.lastname}, {guide.firstname}
+                {/if}
+                {/each}
             </td>
         </tr>
         {/each}

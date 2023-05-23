@@ -87,5 +87,14 @@ export const placemarkService = {
         } catch (error) {
             return [];
         }
+    },
+
+    async getGuides() {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/guides");
+            return response.data;
+        } catch (error) {
+            return [];
+        }
     }
 };
