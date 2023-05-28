@@ -32,7 +32,7 @@ export const placemarkService = {
             token: ""
         });
         axios.defaults.headers.common["Authorization"] = "";
-        localStorage.removeItem("site");
+        localStorage.removeItem("addsite");
     },
 
     async signup(firstname, lastname, email, password) {
@@ -62,18 +62,18 @@ export const placemarkService = {
         }
     },
 
-    async addSite(addsite) {
-        try {
-            const response = await axios.post(this.baseUrl + "/api/users/" + addsite.user + "/addsite", site);
-            return response.status == 200;
-        } catch (error) {
-            return false;
-        }
-    },
-
     async getUsers() {
         try {
             const response = await axios.get(this.baseUrl + "/api/users");
+            return response.data;
+        } catch (error) {
+            return [];
+        }
+    },
+
+    async getUsersById() {
+        try {
+            const response = await axios.get(this.baseUrl + "/api/users/{id}");
             return response.data;
         } catch (error) {
             return [];
@@ -89,12 +89,24 @@ export const placemarkService = {
         }
     },
 
-    async getGuides() {
-        try {
-            const response = await axios.get(this.baseUrl + "/api/guides");
-            return response.data;
+    async addSite(userId, site) {
+        try {  // this is where most of the problems stemmed from last reiteration
+            const response = await axios.post(this.baseUrl + `/api/users/${userId}/sites`, site);
+            return response.status == 200;
         } catch (error) {
-            return [];
+            return false;
         }
-    }
+    },
+
+   /*  async site(site) {
+        try {  // this is where most of the problems stemmed from last reiteration
+            const response = await axios.post(this.baseUrl + "/api/users" + site.user + "/sites", site);
+            return response.status == 200;
+        } catch (error) {
+            return false;
+        }
+    } */
+
 };
+
+       

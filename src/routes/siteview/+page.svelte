@@ -1,6 +1,6 @@
 <script>
     import Header from "$lib/Header.svelte";
-    import AddPlace from "$lib/AddPlace.svelte";
+    import ListSites from "$lib/ListSites.svelte";
     import MainNavigator from "$lib/MainNavigator.svelte";
 </script>
 
@@ -10,10 +10,10 @@
 
 <div class="columns">
     <div class="column has-text-centered">
-        <img alt="building" src="/building.png" width="200" />
+        <img alt="tree" src="/tree.png" width="200" />
     </div>
-    <div class="column has-text-centered">
-        <h1 class="title is-4">Add a new place here</h1>
-        <AddPlace />
+    <div class="column box has-text-centered">
+        <h1 class="title is-4">List of Site Locations to date</h1>
+        <ListSites />
     </div>
 </div>
