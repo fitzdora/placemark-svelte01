@@ -13,7 +13,7 @@
         <img alt="building" src="/building.png" width="200" />
     </div>
     <div class="column has-text-centered">
-        <h1 class="title is-4">Add a new place here</h1>
+        <h1 class="title is-4">Add a new site here</h1>
         <AddSite />
     </div>
 </div>

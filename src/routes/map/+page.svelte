@@ -14,5 +14,6 @@
 <Header>
     <MainNavigator />
 </Header>
+
 <div class="box">Map of Heritage Sites here</div>
 <SiteMap />

@@ -16,6 +16,10 @@
         map = new LeafletMap("site-map", mapConfig);
         map.showZoomControl();
         map.showLayerControl();
+        const sites = await placemarkService.getSites();
+        sites.forEach((site) => {
+            map.addMarker({ lat: site.lat, lng: site.lng });
+        });
     });
 </script>
 
